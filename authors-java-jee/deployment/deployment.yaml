@@ -3,7 +3,6 @@ apiVersion: apps/v1beta1
 metadata:
   name: authors
 spec:
-  serviceAccountName: tekton-sa
   replicas: 1
   template:
     metadata:
