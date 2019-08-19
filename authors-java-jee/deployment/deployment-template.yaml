@@ -10,9 +10,11 @@ spec:
         app: authors
         version: v1
     spec:
+      imagePullSecrets:
+      - name: tektonpipeline
       containers:
       - name: authors
-        image: <ip:port>/<namespace>/authors:<tag>
+        image: kubernetesdeployment.azurecr.io/authors:1
         ports:
         - containerPort: 3000
         livenessProbe:
