@@ -3,6 +3,7 @@ apiVersion: apps/v1beta1
 metadata:
   name: authors
 spec:
+  serviceAccount: tekton-sa
   replicas: 1
   template:
     metadata:
@@ -10,6 +11,8 @@ spec:
         app: authors
         version: v1
     spec:
+      imagePullSecrets:
+      - name: tektonpipeline
       containers:
       - name: authors
         image: authors:1
