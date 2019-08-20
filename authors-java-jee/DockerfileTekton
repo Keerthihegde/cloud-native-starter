@@ -6,10 +6,12 @@ RUN mvn -f /usr/src/app/pom.xml clean package
 
 FROM open-liberty:microProfile2-java11
 
+RUN mkdir /config/apps/
 RUN chmod 777 /config/
+
 COPY liberty/server.xml /config/
-RUN cd /config 
-RUN mkdir /apps/
+
+
 COPY --from=0 /usr/src/app/target/authors.war /config/apps/
 
 EXPOSE 3000
