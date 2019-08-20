@@ -6,6 +6,7 @@ RUN mvn -f /usr/src/app/pom.xml clean package
 
 FROM open-liberty:microProfile2-java11
 
+RUN rm /config/apps/
 RUN mkdir /config/apps/
 RUN chmod 777 /config/
 
