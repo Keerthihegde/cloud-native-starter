@@ -14,7 +14,7 @@ spec:
       - name: tektonpipeline
       containers:
       - name: authors
-        image: tekton:latest
+        image: kubernetesdeployment.azurecr.io/tekton:latest
         ports:
         - containerPort: 3000
         livenessProbe:
