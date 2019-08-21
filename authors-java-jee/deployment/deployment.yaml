@@ -14,7 +14,7 @@ spec:
       - name: tektonpipeline
       containers:
       - name: authors
-        image: authors:1
+        image: tekton:latest
         ports:
         - containerPort: 3000
         livenessProbe:
